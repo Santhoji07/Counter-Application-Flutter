@@ -1,46 +1,50 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+    
 void main() {
-  runApp(MyApp());
+  runApp( MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatelessWidget{
   const MyApp({super.key});
-
+  
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-        debugShowCheckedModeBanner: false, home: HomeScreen());
+      debugShowCheckedModeBanner: false,
+      home:Homescreen(),
+      );
+
+    
   }
 }
-
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class Homescreen extends StatelessWidget{
+  const Homescreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Hello World"),
+        title: Text("hello world"),
         centerTitle: true,
         backgroundColor: Colors.amber,
       ),
       body: Center(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              "Hello Chat",
-              style: GoogleFonts.lato(
-                textStyle: TextStyle(color: Colors.blue, letterSpacing: .5),
-              ),
-            ),
-          ],
-        ),
+          mainAxisAlignment:MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center, 
+          children:[
+          Text("hello world",style: GoogleFonts.lato(textStyle: TextStyle(fontSize: 30,color: Colors.amber)),
+          ),
+          ElevatedButton(onPressed: (){
+            print("hello");
+          }, child: Text("click me"))
+        ],),
       ),
-      backgroundColor: Colors.deepOrange,
+      backgroundColor: Colors.blue,
     );
+
   }
 }
